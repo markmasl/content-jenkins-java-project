@@ -46,8 +46,8 @@ pipeline {
       docker 'openjdk:8u171-jre-alpine'
       }
       steps {
-      sh "wget http://neotech1.mylabserver.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar" 
-      sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
+       sh "wget http://neotech1.mylabserver.com/rectangles/all/rectangle_${env.BUILD_NUMBER}.jar" 
+       sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
       }
     }
     stage ('Promote to green') {
