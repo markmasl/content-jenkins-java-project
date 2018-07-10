@@ -36,7 +36,7 @@ pipeline {
     }
     stage("Running on CentoS") {
       agent {
-      label 'CentOS'
+       label 'CentOS'
       }
       steps {
         sh "wget http://neotech1.mylabserver.com/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
