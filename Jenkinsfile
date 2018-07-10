@@ -65,10 +65,10 @@ pipeline {
     }
     stage ('Promote development branch to master') {
       agent {
-      label 'master'
+       label 'master'
       }
       when {
-      branch 'master'
+       branch 'master'
       }
       steps {
         echo "Staching Any Local Changes"
