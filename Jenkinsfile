@@ -10,14 +10,16 @@ pipeline {
        sayHello 'Awesome Student'
       }
     }
-   stage ('Say Hello') {
-    agent any
+    stage('Git Information') {
+      agent any
+
       steps {
-        echo "My Branch name: ${env.BRANCH_NAME}"
-        
+        echo "My Branch Name: ${env.BRANCH_NAME}"
+
         script {
-        def myLib = new linuxacademy.git.gitStuff();
-          echo "My Commit: ${myLib.gitCommit("${env.WORKSPACE}/.git)}"
+          def myLib = new linuxacademy.git.gitStuff();
+
+          echo "My Commit: ${myLib.gitCommit("${env.WORKSPACE}/.git")}"
         }
       }
     }
