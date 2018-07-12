@@ -42,6 +42,7 @@ pipeline {
       steps {
         sh "wget http://neotech1.mylabserver.com/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
         sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
+        sh ""
       }
     }
     stage("Test on Debian") {
@@ -49,7 +50,7 @@ pipeline {
        docker 'openjdk:8u171-jre-alpine'
       }
       steps {
-       sh "wget http://neotech1.mylabserver.com/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar" 
+       sh "wget -N http://neotech1.mylabserver.com/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar" 
        sh "java -jar rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar 3 4"
       }
     }
