@@ -96,7 +96,7 @@ pipeline {
         to: "mattlovegreen@gmail.com"
       )
       }
-    }
+     }
     }
   }
     post {
